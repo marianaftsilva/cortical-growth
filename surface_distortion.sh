@@ -7,7 +7,7 @@
 
 module load openblas
 
-SUBS_LIST=($(</users/k19068865/sub_IDs_preterms.txt))
+SUBS_LIST=($(sub_IDs_preterms.txt))
 
 SUB=${SUBS_LIST[${SLURM_ARRAY_TASK_ID}]} 
 
@@ -25,8 +25,8 @@ SUB=${SUBS_LIST[${SLURM_ARRAY_TASK_ID}]}
 #SES_1=$(echo ${subj} | cut -d "/" -f 2)
 #SES_2=$(echo ${subj} | cut -d "/" -f 3)
 
-DIR=/scratch/users/k19068865/longitudinal_dHCP
-DIR=/scratch/users/k19068865/fetal-neonatal
+DIR=/longitudinal_dHCP
+DIR=/fetal-neonatal
 
 #ANATOMICAL SURFACES
 FAS="$DIR"/ico6/sub-${SUB}_ses-${SES_1}_left_midthickness_ico6.surf.gii 
