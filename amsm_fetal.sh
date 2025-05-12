@@ -6,16 +6,16 @@
 #SBATCH --time=24:00:00
 
 module load openblas
-SUBS_LIST=($(</users/k19068865/list_subs.txt))
-FETAL_LIST=($(</users/k19068865/list_fetal.txt))
-NEO_LIST=($(</users/k19068865/list_neo.txt))
+SUBS_LIST=($(</list_subs.txt))
+FETAL_LIST=($(</list_fetal.txt))
+NEO_LIST=($(</list_neo.txt))
 
 SUB=${SUBS_LIST[${SLURM_ARRAY_TASK_ID}]} 
 SES_FETAL=${FETAL_LIST[${SLURM_ARRAY_TASK_ID}]}
 SES_NEO=${NEO_LIST[${SLURM_ARRAY_TASK_ID}]}
 
 # top directory for data
-DIR=/scratch/users/k19068865/fetal-neonatal
+DIR=/fetal-neonatal
 
 # right hemisphere
 
